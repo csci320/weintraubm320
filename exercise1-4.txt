@@ -1,0 +1,13 @@
+mysql> select distinct sports from visit order by sports;
++--------------------------+
+| sports                   |
++--------------------------+
+| NULL                     |
+| Baseball                 |
+| Men's golf               |
+| Men's soccer, Baseball   |
+| Women's soccer, Softball |
++--------------------------+
+5 rows in set (0.00 sec)
+
+mysql> notee
