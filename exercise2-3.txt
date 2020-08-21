@@ -1,0 +1,24 @@
+mysql> select sports from visit;
++--------------------------+
+| sports                   |
++--------------------------+
+| NULL                     |
+| Men's soccer, Baseball   |
+| NULL                     |
+| NULL                     |
+| Women's soccer, Softball |
+| Men's golf               |
+| Baseball                 |
+| NULL                     |
+| NULL                     |
+| NULL                     |
+| Men's soccer, Baseball   |
+| Women's soccer, Softball |
+| NULL                     |
+| Women's soccer, Softball |
++--------------------------+
+14 rows in set (0.00 sec)
+
+mysql> notee
+They all seem to match each other the only outlier being mens golf 
+unless it needs to be null???
