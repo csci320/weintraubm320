@@ -1,0 +1,33 @@
+mysql> update from visit majors = 'Math, Computer Science' where majors = 'Math, Comp Sci';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from visit majors = 'Math, Computer Science' where majors = 'Math, Comp Sci'' at line 1
+mysql> update visit set  majors = 'Math, Computer Science' where majors = 'Math, Comp Sci';
+Query OK, 2 rows affected (0.05 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update visit set  majors = 'Philosophy, English' where majors = 'Philosophy and English';
+Query OK, 3 rows affected (0.05 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+mysql> select majors from visit
+    -> ;
++------------------------------+
+| majors                       |
++------------------------------+
+| Math, Computer Science       |
+| English                      |
+| Chemistry                    |
+| Computer Science             |
+| Philosophy, English          |
+| Computer Science, Philosophy |
+| Biology                      |
+| Chemistry                    |
+| Undecided                    |
+| Undecided                    |
+| English                      |
+| Philosophy, English          |
+| Math, Computer Science       |
+| Philosophy, English          |
++------------------------------+
+14 rows in set (0.00 sec)
+
+mysql> notee
