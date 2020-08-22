@@ -13,3 +13,4 @@ mysql> select * from visit
 
 mysql> 
 
+mysql> tee exercise3-3.txt
