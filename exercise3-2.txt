@@ -1,32 +1,15 @@
-mysql> insert into visit values ('Jason','Todd','RedH00d@dewv.edu','Junior','Commuter,'Computer Science','Men/'s Golf','Bruce', 'Wayne'); 
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Computer Science','Men/'s Golf','Bruce', 'Wayne')' at line 1
-mysql> insert into visit values ('Jason','Todd','RedH00d@dewv.edu','Junior','Commuter,'Computer Science','Men\'s Golf','Bruce', 'Wayne');
-ERROR: 
-Unknown command '\''.
-    '> insert into visit values ('Jason','Todd','RedH00d@dewv.edu','Junior','Commuter','Computer Science','Men\'s Golf','Bruce', 'Wayne');
-ERROR: 
-Unknown command '\''.
-    '> insert into visit values ('Jason','Todd','RedH00d@dewv.edu','Junior','Commuter','Computer Science','Men\'s Golf','Bruce', 'Wayne');
-ERROR: 
-Unknown command '\''.
-    '> '
-    -> ;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Computer Science','Men\'s Golf','Bruce', 'Wayne');
-insert into visit values ('Ja' at line 1
-mysql> insert into visit values ('Jason','Todd','RedH00d@dewv.edu','Junior','Commuter','Computer Science','Men\'s Golf','Bruce', 'Wayne'); 
-ERROR 1136 (21S01): Column count doesn't match value count at row 1
-mysql> insert into visit values ('Jason','Todd','RedH00d@dewv.edu','Junior','Commuter','Computer Science','Men\'s Golf','Bruce', 'Wayne',CURRENT_TIMESTAMP);
-ERROR 1136 (21S01): Column count doesn't match value count at row 1
-mysql> insert into visit values ('Jason','Todd','RedH00d@dewv.edu','Junior','Commuter','Computer Science','Men\'s Golf','Bruce', 'Wayne',CURRENT_TIMESTAMP,'8:00,'SC102','SQL Statements','Yes','Yes','Easily Frustrated');
-    '> '
-    -> ;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SC102','SQL Statements','Yes','Yes','Easily Frustrated');
-'' at line 1
-mysql> insert into visit values ('Jason','Todd','RedH00d@dewv.edu','Junior','Commuter','Computer Science','Men\'s Golf','Bruce', 'Wayne',CURRENT_TIMESTAMP,'8:00','SC102','SQL Statements','Yes','Yes','Easily Frustrated');
 
-ERROR 1292 (22007): Incorrect datetime value: '8:00' for column 'check_out_time' at row 1
-mysql> insert into visit values ('Jason','Todd','RedH00d@dewv.edu','Junior','Commuter','Computer Science','Men\'s Golf','Bruce', 'Wayne',CURRENT_TIMESTAMP, NULL,'SC102','SQL Statements','Yes','Yes','Easily Frustrated');
-ERROR 1406 (22001): Data too long for column 'purpose_achieved' at row 1
 mysql> insert into visit values ('Jason','Todd','RedH00d@dewv.edu','Junior','Commuter','Computer Science','Men\'s Golf','Bruce', 'Wayne',CURRENT_TIMESTAMP, NULL,'SC102','SQL Statements','Y','Yes','Easily Frustrated');
 Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from visit
+    -> where first_name = 'Jason' and last_name = 'Todd';
++------------+-----------+------------------+---------------+--------------------+------------------+------------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+-------------------+
+| first_name | last_name | email            | academic_rank | residential_status | majors           | sports     | slp_instructor_first_name | slp_instructor_last_name | check_in_time       | check_out_time | location | purpose        | purpose_achieved | tutoring | comments          |
++------------+-----------+------------------+---------------+--------------------+------------------+------------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+-------------------+
+| Jason      | Todd      | RedH00d@dewv.edu | Junior        | Commuter           | Computer Science | Men's Golf | Bruce                     | Wayne                    | 2020-08-22 20:18:13 | NULL           | SC102    | SQL Statements | Y                | Yes      | Easily Frustrated |
++------------+-----------+------------------+---------------+--------------------+------------------+------------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+-------------------+
+1 row in set (0.00 sec)
+
+mysql> 
 
