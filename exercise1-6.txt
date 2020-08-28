@@ -1,0 +1,24 @@
+mysql> select distinct majors 
+    -> from visit
+    -> order by majors;
++------------------------------+
+| majors                       |
++------------------------------+
+| NULL                         |
+| Biology                      |
+| Chemistry                    |
+| Computer Science             |
+| Computer Science, Philosophy |
+| English                      |
+| Math, Computer Science       |
+| Philosophy, English          |
+| Undecided                    |
++------------------------------+
+9 rows in set (0.01 sec)
+
+mysql> -- misspelled duplicates --
+mysql> ;
+ERROR: 
+No query specified
+
+mysql> notee

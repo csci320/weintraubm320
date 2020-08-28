@@ -1,0 +1,21 @@
+mysql> select first_name, last_name, location from visit where first_name = 'Bob';
++------------+-----------+-------------+
+| first_name | last_name | location    |
++------------+-----------+-------------+
+| Bob        | Booth     | Albert Hall |
+| Bob        | Booth     | SC102       |
++------------+-----------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> delete from visit where first_name = 'Bob' and last_name = 'Booth' and location = 'SC102';
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select first_name, last_name, location from visit where first_name = 'Bob';
++------------+-----------+-------------+
+| first_name | last_name | location    |
++------------+-----------+-------------+
+| Bob        | Booth     | Albert Hall |
++------------+-----------+-------------+
+1 row in set (0.00 sec)
+
+mysql> notee

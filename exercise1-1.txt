@@ -1,5 +1,3 @@
-mysql> select first_name, last_name , check_in_time, check_ou_time from visit;
-ERROR 1054 (42S22): Unknown column 'check_ou_time' in 'field list'
 mysql> select first_name, last_name , check_in_time, check_out_time from visit;
 +------------+-----------+---------------------+---------------------+
 | first_name | last_name | check_in_time       | check_out_time      |
