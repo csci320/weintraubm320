@@ -1,0 +1,7 @@
+mysql> notee
+mysql> insert into major values (NULL);
+ERROR 1048 (23000): Column 'name' cannot be null
+mysql> notee
+mysql> insert into major values ('Music');
+ERROR 1062 (23000): Duplicate entry 'Music' for key 'major.PRIMARY'
+mysql> notee
