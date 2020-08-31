@@ -1,13 +1,11 @@
-mysql> select first_name, last_name , check_in_time, check_out_time from visit where last_name = 'Davis' or last_name =  'Cadillac' order by last_name or check_in_time;
-+------------+-----------+---------------------+---------------------+
+ select first_name, last_name , check_in_time, check_out_time from visit where last_name = 'Davis' and ch
+eck_out_time IS NOT NULL or last_name =  'Cadillac' and check_out_time ISNOT NULL order by last_name and check
+_in_time;+------------+-----------+---------------------+---------------------+
 | first_name | last_name | check_in_time       | check_out_time      |
 +------------+-----------+---------------------+---------------------+
 | Charlie    | Cadillac  | 2016-08-30 14:55:55 | 2016-08-30 16:53:44 |
 | Debbie     | Davis     | 2016-08-30 16:36:56 | 2016-08-30 17:57:47 |
 | Charlie    | Cadillac  | 2016-08-31 11:51:15 | 2016-08-31 11:53:44 |
 | Debbie     | Davis     | 2016-08-31 13:36:36 | 2016-08-31 14:47:44 |
-| Debra      | Davis     | 2016-08-31 16:00:06 | NULL                |
 +------------+-----------+---------------------+---------------------+
-5 rows in set, 5 warnings (0.00 sec)
-
-mysql> notee
+4 rows in set, 4 warnings (0.00 sec)
