@@ -1,0 +1,5 @@
+mysql> update sport values (NULL) where name = ('Basketball'); 
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'values (NULL) where name = ('Basketball')' at line 1
+mysql> update sport set gender =  (NULL) where name = ('Basketball');
+ERROR 1048 (23000): Column 'gender' cannot be null
+mysql> notee

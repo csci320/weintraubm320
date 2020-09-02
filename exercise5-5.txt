@@ -1,0 +1,13 @@
+mysql> insert into student_major (email, major name, gender) values
+
+mysql> insert into student_major (email, major_name, gender) values
+('ccadillac@dewv.net', 'Management', 'Men') , 
+('ccadillac@dewv.net', 'Pre-Law', 'Men'),
+('ddavis@dewv.net', 'Music', 'Women'), 
+('ddavis@dewv.net', 'Art', 'Women'), 
+('bbooth@dewv.net', 'Marketing', 'Men'),
+('eelkins@dewv.net', 'Biology', 'Men');
+Query OK, 6 rows affected (0.05 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> notee

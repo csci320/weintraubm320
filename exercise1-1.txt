@@ -1,4 +1,4 @@
-mysql> select first_name, last_name , check_in_time, check_out_time from visit;
+mysql> noteemysql> select first_name, last_name , check_in_time, check_out_time from visit where check_out_time IS NOT NULL;
 +------------+-----------+---------------------+---------------------+
 | first_name | last_name | check_in_time       | check_out_time      |
 +------------+-----------+---------------------+---------------------+
@@ -14,9 +14,7 @@ mysql> select first_name, last_name , check_in_time, check_out_time from visit;
 | Frank      | Forest    | 2016-08-31 11:19:15 | 2016-08-31 12:23:22 |
 | Charlie    | Cadillac  | 2016-08-31 11:51:15 | 2016-08-31 11:53:44 |
 | Debbie     | Davis     | 2016-08-31 13:36:36 | 2016-08-31 14:47:44 |
-| Gary       | Gatehouse | 2016-08-31 14:36:56 | NULL                |
-| Debra      | Davis     | 2016-08-31 16:00:06 | NULL                |
 +------------+-----------+---------------------+---------------------+
-14 rows in set (0.00 sec)
+12 rows in set (0.00 sec)
 
 mysql> notee
