@@ -1,4 +1,4 @@
- select first_name, last_name , check_in_time, check_out_time from visit where last_name = 'Davis' or last_name =  'Cadillac' and check_out_time IS NOT NULL order by last_name check_in_time;
+ select first_name, last_name , check_in_time, check_out_time from visit where last_name = 'Davis' or last_name =  'Cadillac' and check_out_time IS NOT NULL order by last_name, check_in_time;
 +------------+-----------+---------------------+---------------------+
 | first_name | last_name | check_in_time       | check_out_time      |
 +------------+-----------+---------------------+---------------------+

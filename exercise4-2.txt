@@ -1,95 +1,30 @@
-mysql> select first_name = 'Jason' and last_name = 'Todd' from visit;
-+---------------------------------------------+
-| first_name = 'Jason' and last_name = 'Todd' |
-+---------------------------------------------+
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           1 |
-|                                           0 |
-+---------------------------------------------+
-16 rows in set (0.00 sec)
+
+mysql> select * from visit where first_name = 'Jason' and last_name = 'Todd';
++------------+-----------+------------------+---------------+--------------------+--------+--------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+----------+
+| first_name | last_name | email            | academic_rank | residential_status | majors | sports | slp_instructor_first_name | slp_instructor_last_name | check_in_time       | check_out_time | location | purpose        | purpose_achieved | tutoring | comments |
++------------+-----------+------------------+---------------+--------------------+--------+--------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+----------+
+| Jason      | Todd      | RedH00d@dewv.edu | Junior        | Commuter           | NULL   | NULL   | NULL                      | NULL                     | 2020-09-04 15:13:41 | NULL           | SC102    | SQL Statements | NULL             | NULL     | NULL     |
++------------+-----------+------------------+---------------+--------------------+--------+--------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+----------+
+1 row in set (0.00 sec)
 
 mysql> delete from visit where first_name = 'Jason' and last_name = 'Todd';
-Query OK, 1 row affected (0.04 sec)
+Query OK, 1 row affected (0.07 sec)
 
-mysql> select first_name = 'Jason' and last_name = 'Todd' from visit;
-+---------------------------------------------+
-| first_name = 'Jason' and last_name = 'Todd' |
-+---------------------------------------------+
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-|                                           0 |
-+---------------------------------------------+
-15 rows in set (0.01 sec)
+mysql> select * from visit where first_name = 'Jason' and last_name = 'Todd';
+Empty set (0.00 sec)
 
-mysql> select first_name = 'Tim' and last_name = 'Drake' from visit;
-+--------------------------------------------+
-| first_name = 'Tim' and last_name = 'Drake' |
-+--------------------------------------------+
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          1 |
-+--------------------------------------------+
-15 rows in set (0.00 sec)
+mysql> select * from visit where first_name = 'Tim' and last_name = 'Drake';
++------------+-----------+--------------------+---------------+--------------------+--------+--------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+----------+
+| first_name | last_name | email              | academic_rank | residential_status | majors | sports | slp_instructor_first_name | slp_instructor_last_name | check_in_time       | check_out_time | location | purpose        | purpose_achieved | tutoring | comments |
++------------+-----------+--------------------+---------------+--------------------+--------+--------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+----------+
+| Tim        | Drake     | RedRobins@dewv.edu | Sophomore     | Commuter           | NULL   | NULL   | NULL                      | NULL                     | 2020-09-04 15:15:24 | NULL           | SC102    | SQL Statements | NULL             | NULL     | NULL     |
++------------+-----------+--------------------+---------------+--------------------+--------+--------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+----------+
+1 row in set (0.00 sec)
 
 mysql> delete from visit where first_name = 'Tim' and last_name = 'Drake';
-Query OK, 1 row affected (0.06 sec)
+Query OK, 1 row affected (0.09 sec)
 
-mysql> select first_name = 'Tim' and last_name = 'Drake' from visit;
-+--------------------------------------------+
-| first_name = 'Tim' and last_name = 'Drake' |
-+--------------------------------------------+
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-|                                          0 |
-+--------------------------------------------+
-14 rows in set (0.00 sec)
+mysql> select * from visit where first_name = 'Tim' and last_name = 'Drake';
+Empty set (0.00 sec)
 
 mysql> notee

@@ -1,12 +1,14 @@
-mysql> insert into visit values ('Tim','Drake','RedRobins@dewv.edu','Sophomore','Commuter','Computer Science','Men\'s Golf','Bruce', 'Wayne',CURRENT_TIMESTAMP, NULL,'SC102','SQL Statements','Y','Yes','OverAchiever');
-Query OK, 1 row affected (0.03 sec)
+
+mysql>  insert into visit (first_name, last_name, email, academic_rank, residential_status, location, purpose)
+    ->  values ('Tim','Drake','RedRobins@dewv.edu','Sophomore','Commuter','SC102','SQL Statements');
+Query OK, 1 row affected (0.05 sec)
 
 mysql> select * from visit where first_name = 'Tim' and last_name = 'Drake';
-+------------+-----------+--------------------+---------------+--------------------+------------------+------------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+--------------+
-| first_name | last_name | email              | academic_rank | residential_status | majors           | sports     | slp_instructor_first_name | slp_instructor_last_name | check_in_time       | check_out_time | location | purpose        | purpose_achieved | tutoring | comments     |
-+------------+-----------+--------------------+---------------+--------------------+------------------+------------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+--------------+
-| Tim        | Drake     | RedRobins@dewv.edu | Sophomore     | Commuter           | Computer Science | Men's Golf | Bruce                     | Wayne                    | 2020-08-22 20:23:35 | NULL           | SC102    | SQL Statements | Y                | Yes      | OverAchiever |
-+------------+-----------+--------------------+---------------+--------------------+------------------+------------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+--------------+
++------------+-----------+--------------------+---------------+--------------------+--------+--------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+----------+
+| first_name | last_name | email              | academic_rank | residential_status | majors | sports | slp_instructor_first_name | slp_instructor_last_name | check_in_time       | check_out_time | location | purpose        | purpose_achieved | tutoring | comments |
++------------+-----------+--------------------+---------------+--------------------+--------+--------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+----------+
+| Tim        | Drake     | RedRobins@dewv.edu | Sophomore     | Commuter           | NULL   | NULL   | NULL                      | NULL                     | 2020-09-04 15:15:24 | NULL           | SC102    | SQL Statements | NULL             | NULL     | NULL     |
++------------+-----------+--------------------+---------------+--------------------+--------+--------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+----------+
 1 row in set (0.00 sec)
 
 mysql> notee

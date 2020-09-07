@@ -1,36 +1,15 @@
-mysql> insert into visit (first_name, last_name, location, purpose, email, academic_rank, residential_status) values ('Bob','Booth','SC102','Practice SQL Statements',NULL, N 'NULL');
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''NULL')' at line 1
-mysql> insert into visit (first_name, last_name, location, purpose, email, academic_rank, residential_status) values ('Bob','Booth','SC102','Practice SQL Statements',NULL, NULL, NULL);
-ERROR 1048 (23000): Column 'email' cannot be null
-mysql> insert into visit (first_name, last_name, location, purpose, email, academic_rank, residential_status) values ('Bob','Booth','SC102','Practice SQL Statements','NULL', 'NULL', 'NULL');
-Query OK, 1 row affected (0.05 sec)
-
-mysql> select * from visit
-    -> where first_name = 'Bob' and last_name = 'Booth';  
-+------------+-----------+-----------------+---------------+--------------------+------------------------------+------------+---------------------------+--------------------------+---------------------+---------------------+-------------+-------------------------+------------------+----------+------------------------+
-| first_name | last_name | email           | academic_rank | residential_status | majors                       | sports     | slp_instructor_first_name | slp_instructor_last_name | check_in_time       | check_out_time      | location    | purpose                 | purpose_achieved | tutoring | comments               |
-+------------+-----------+-----------------+---------------+--------------------+------------------------------+------------+---------------------------+--------------------------+---------------------+---------------------+-------------+-------------------------+------------------+----------+------------------------+
-| Bob        | Booth     | bbooth@dewv.net | Sophomore     | On campus          | Computer Science, Philosophy | Men's golf | NULL                      | NULL                     | 2016-08-30 16:44:54 | 2016-08-30 16:53:44 | Albert Hall | study hall              | Y                | NULL     | New year, fresh start! |
-| Bob        | Booth     | NULL            | NULL          | NULL               | NULL                         | NULL       | NULL                      | NULL                     | 2020-08-22 19:50:32 | NULL                | SC102       | Practice SQL Statements | NULL             | NULL     | NULL                   |
-+------------+-----------+-----------------+---------------+--------------------+------------------------------+------------+---------------------------+--------------------------+---------------------+---------------------+-------------+-------------------------+------------------+----------+------------------------+
-2 rows in set (0.00 sec)
-
-mysql> select * from visit where first_name = 'Bob' and last_name = 'Booth'; and purpose = 'Practice SQL Statements';
-+------------+-----------+-----------------+---------------+--------------------+------------------------------+------------+---------------------------+--------------------------+---------------------+---------------------+-------------+-------------------------+------------------+----------+------------------------+
-| first_name | last_name | email           | academic_rank | residential_status | majors                       | sports     | slp_instructor_first_name | slp_instructor_last_name | check_in_time       | check_out_time      | location    | purpose                 | purpose_achieved | tutoring | comments               |
-+------------+-----------+-----------------+---------------+--------------------+------------------------------+------------+---------------------------+--------------------------+---------------------+---------------------+-------------+-------------------------+------------------+----------+------------------------+
-| Bob        | Booth     | bbooth@dewv.net | Sophomore     | On campus          | Computer Science, Philosophy | Men's golf | NULL                      | NULL                     | 2016-08-30 16:44:54 | 2016-08-30 16:53:44 | Albert Hall | study hall              | Y                | NULL     | New year, fresh start! |
-| Bob        | Booth     | NULL            | NULL          | NULL               | NULL                         | NULL       | NULL                      | NULL                     | 2020-08-22 19:50:32 | NULL                | SC102       | Practice SQL Statements | NULL             | NULL     | NULL                   |
-+------------+-----------+-----------------+---------------+--------------------+------------------------------+------------+---------------------------+--------------------------+---------------------+---------------------+-------------+-------------------------+------------------+----------+------------------------+
-2 rows in set (0.00 sec)
-
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and purpose = 'Practice SQL Statements'' at line 1
-mysql> select * from visit where first_name = 'Bob' and last_name = 'Booth' and purpose = 'Practice SQL Statements';
-+------------+-----------+-------+---------------+--------------------+--------+--------+---------------------------+--------------------------+---------------------+----------------+----------+-------------------------+------------------+----------+----------+
-| first_name | last_name | email | academic_rank | residential_status | majors | sports | slp_instructor_first_name | slp_instructor_last_name | check_in_time       | check_out_time | location | purpose                 | purpose_achieved | tutoring | comments |
-+------------+-----------+-------+---------------+--------------------+--------+--------+---------------------------+--------------------------+---------------------+----------------+----------+-------------------------+------------------+----------+----------+
-| Bob        | Booth     | NULL  | NULL          | NULL               | NULL   | NULL   | NULL                      | NULL                     | 2020-08-22 19:50:32 | NULL           | SC102    | Practice SQL Statements | NULL             | NULL     | NULL     |
-+------------+-----------+-------+---------------+--------------------+--------+--------+---------------------------+--------------------------+---------------------+----------------+----------+-------------------------+------------------+----------+----------+
-1 row in set (0.00 sec)
 
 mysql> notee
+mysql> insert into visit (first_name, last_name, location, purpose, email, academic_rank, residential_status, majors, sports) 
+    ->  values ('Bob','Booth','SC102','Practice SQL Statements','bbooth@dewv.net', 'Sophomore', 'On campus', 'Computer Science, Philosophy', 'Men\'s golf' );
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from visit where first_name = 'Bob' and last_name = 'Booth' and purpose = 'Practice SQL Statements'
+    -> ;
++------------+-----------+-----------------+---------------+--------------------+------------------------------+------------+---------------------------+--------------------------+---------------------+----------------+----------+-------------------------+------------------+----------+----------+
+| first_name | last_name | email           | academic_rank | residential_status | majors                       | sports     | slp_instructor_first_name | slp_instructor_last_name | check_in_time       | check_out_time | location | purpose                 | purpose_achieved | tutoring | comments |
++------------+-----------+-----------------+---------------+--------------------+------------------------------+------------+---------------------------+--------------------------+---------------------+----------------+----------+-------------------------+------------------+----------+----------+
+| Bob        | Booth     | bbooth@dewv.net | Sophomore     | On campus          | Computer Science, Philosophy | Men's golf | NULL                      | NULL                     | 2020-09-04 14:19:10 | NULL           | SC102    | Practice SQL Statements | NULL             | NULL     | NULL     |
++------------+-----------+-----------------+---------------+--------------------+------------------------------+------------+---------------------------+--------------------------+---------------------+----------------+----------+-------------------------+------------------+----------+----------+
+1 row in set (0.00 sec)
+

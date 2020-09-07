@@ -1,16 +1,12 @@
 
-mysql> insert into visit values ('Jason','Todd','RedH00d@dewv.edu','Junior','Commuter','Computer Science','Men\'s Golf','Bruce', 'Wayne',CURRENT_TIMESTAMP, NULL,'SC102','SQL Statements','Y','Yes','Easily Frustrated');
-Query OK, 1 row affected (0.04 sec)
+mysql> insert into visit (first_name, last_name, email, academic_rank, residential_status, location, purpose)  values ('Jason','Todd','RedH00d@dewv.edu','Junior','Commuter','SC102','SQL Statements');
+Query OK, 1 row affected (0.05 sec)
 
-mysql> select * from visit
-    -> where first_name = 'Jason' and last_name = 'Todd';
-+------------+-----------+------------------+---------------+--------------------+------------------+------------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+-------------------+
-| first_name | last_name | email            | academic_rank | residential_status | majors           | sports     | slp_instructor_first_name | slp_instructor_last_name | check_in_time       | check_out_time | location | purpose        | purpose_achieved | tutoring | comments          |
-+------------+-----------+------------------+---------------+--------------------+------------------+------------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+-------------------+
-| Jason      | Todd      | RedH00d@dewv.edu | Junior        | Commuter           | Computer Science | Men's Golf | Bruce                     | Wayne                    | 2020-08-22 20:18:13 | NULL           | SC102    | SQL Statements | Y                | Yes      | Easily Frustrated |
-+------------+-----------+------------------+---------------+--------------------+------------------+------------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+-------------------+
+mysql> select * from visit where first_name = 'Jason' and last_name = 'Todd';+------------+-----------+------------------+---------------+--------------------+--------+--------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+----------+
+| first_name | last_name | email            | academic_rank | residential_status | majors | sports | slp_instructor_first_name | slp_instructor_last_name | check_in_time       | check_out_time | location | purpose        | purpose_achieved | tutoring | comments |
++------------+-----------+------------------+---------------+--------------------+--------+--------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+----------+
+| Jason      | Todd      | RedH00d@dewv.edu | Junior        | Commuter           | NULL   | NULL   | NULL                      | NULL                     | 2020-09-04 15:13:41 | NULL           | SC102    | SQL Statements | NULL             | NULL     | NULL     |
++------------+-----------+------------------+---------------+--------------------+--------+--------+---------------------------+--------------------------+---------------------+----------------+----------+----------------+------------------+----------+----------+
 1 row in set (0.00 sec)
 
-mysql> 
-
-mysql> tee exercise3-3.txt
+mysql> notee

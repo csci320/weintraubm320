@@ -1,0 +1,27 @@
+"<" means determines
+
+name < season in sport
+gender < season in sport
+name and gender < season in sport
+There are no functional dependencies in major
+email < first and last names in visit and visit1nf
+email < academic rank visit and visit1nf
+email < residential status visit and visit1nf
+email < slp instructor first and last names visit and visit1nf
+First and last names < first and last names visit and visit1nf
+First and last names < academic rank visit and visit1nf
+First and last names < residential status visit and visit1nf
+First and last names < slp instructor first and last names visit and visit1nf
+email or First and last names < check in time visit and visit1nf
+email and check in time < location visit and visit1nf
+email and check in time < Checkout time visit and visit1nf
+email and check in time < purpose visit and visit1nf
+email and check in time < purpose achieved visit and visit1nf
+email and check in time < tutoring visit and visit1nf
+email and check in time < comments visit and visit1nf
+First and last names and check in time < location visit and visit1nf
+First and last names and check in time < Checkout time visit and visit1nf
+First and last names and check in time < purpose visit and visit1nf
+First and last names and check in time < purpose achieved visit and visit1nf
+First and last names and check in time < tutoring visit and visit1nf
+First and last names and check in time < comments visit and visit1nf
