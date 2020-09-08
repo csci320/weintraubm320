@@ -1,0 +1,1 @@
+email cannot be null since its a primary key

@@ -1,0 +1,1 @@
+no, first name and last name are also candidate key.

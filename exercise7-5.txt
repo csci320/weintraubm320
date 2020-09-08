@@ -1,0 +1,1 @@
+because it only has one primary key

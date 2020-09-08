@@ -27,3 +27,17 @@ mysql> insert into visit2nf
     ->        from visit1nf;
 ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`learning_center`.`visit2nf`, CONSTRAINT `visit2nf_ibfk_1` FOREIGN KEY (`email`) REFERENCES `student` (`email`))
 mysql> notee
+ 
+ insert into student 
+       (first_name, last_name, email, academic_rank, residential_status,
+       slp_instructor_first_name, slp_instructor_last_name)
+       select first_name, last_name, email, academic_rank, residential_status,
+       slp_instructor_first_name, slp_instructor_last_name
+       from visit1nf;
+
+insert into visit2nf
+       (email, check_in_time,
+       check_out_time, location, purpose, purpose_achieved, tutoring, comments)
+       select email, check_in_time,
+       check_out_time, location, purpose, purpose_achieved, tutoring, comments
+       from visit1nf;
