@@ -1,7 +1,7 @@
 "<" means determines
 
-name < season in sport
-gender < season in sport
+
+
 name and gender < season in sport
 There are no functional dependencies in major
 email < first and last names in visit and visit1nf
