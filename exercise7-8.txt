@@ -1,0 +1,2 @@
+sport and major are in 2nf because they only have one key and only need one
+student major and student sport are not because they have multiple keys

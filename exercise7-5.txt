@@ -1,1 +1,1 @@
-because it only has one primary key
+because it has no trivial keys and only needs one reference to connect to other tables rather than multiple references
