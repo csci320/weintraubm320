@@ -1,0 +1,14 @@
+mysql> insert into visit2nf email values 'RedH00d@dewv.edu';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'email values 'RedH00d@dewv.edu'' at line 1
+mysql> insert email into visit2nf values 'RedH00d@dewv.edu';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'into visit2nf values 'RedH00d@dewv.edu'' at line 1
+mysql> insert into visit2nf (email) values ('RedH00d@dewv.edu';)
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+    -> insert into visit2nf (email) values ('RedH00d@dewv.edu';)
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+insert into visit2nf (email) values ('RedH00d@dewv.edu'' at line 1
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql>  insert into visit2nf (email) values ('RedH00d@dewv.edu');
+ERROR 1364 (HY000): Field 'location' doesn't have a default value
+mysql> notee
