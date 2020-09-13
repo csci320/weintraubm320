@@ -1,0 +1,8 @@
+visit2nf- not bcnf contains unneeded location
+student- int bcnf because it has determinates that arent candidate keys
+sport- isnt bcnf because of gender field 
+major- is bcnf only has major
+student_sport- isnt bcnf is unnecessary with foreign keys
+student_major- isnt bcnf is unnecessary with foreign keys
+computer- is bcnf after work we did
+printer- is bcnf after work we did 
