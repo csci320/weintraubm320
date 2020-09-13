@@ -1,0 +1,2 @@
+Transaction processing systems require the most levels of normalization due to high levels of traffic.
+EIS and MIS both can function and use lower levels of normalization due to lower  levels of traffic.
