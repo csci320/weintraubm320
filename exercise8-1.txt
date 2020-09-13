@@ -1,0 +1,26 @@
+mysql> alter table computer drop column color;
+Query OK, 0 rows affected (0.48 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> create table printer (
+    -> printer varchar(16),
+    -> color varchar(3),
+    -> constraint primary key(printer)
+    -> );
+Query OK, 0 rows affected (0.43 sec)
+
+mysql> 
+mysql> insert into printer(printer, color) values
+    -> ('P1', 'No'),
+    -> ('P2', 'Yes'),
+    -> ('P3', 'Yes'),
+    -> ('P4', 'No')
+    -> ;
+Query OK, 4 rows affected (0.05 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> alter table computer add constraint foreign key(printer) references printer(printer);
+Query OK, 5 rows affected (0.59 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> notee
