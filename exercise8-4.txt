@@ -1,0 +1,6 @@
+visit2nf- isnt 3nf with location 
+student- is 3nf having only infor pertinent to student
+sport- is 3nf haing only candidate keys
+major- is 3nf only having the candidate key
+student_sport- is 3nf only connecting sport and student
+student_major- is 3nf only connecting majors and student

@@ -1,0 +1,24 @@
+mysql> alter table staff drop column assistant_email;
+Query OK, 0 rows affected (0.93 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> create table location (
+    -> location varchar(15) NOT NULL,
+    -> assistant_email varchar(128) NOT NULL,
+    -> constraint primary key(location)
+    -> );
+Query OK, 0 rows affected (1.07 sec)
+
+mysql> insert into location(location, assistant_email) values
+    -> ('Albert Hall', 'ccalendar@dewv.net'),
+    -> ('Writing Center', 'gguardian@dewv.net')
+    -> ;
+Query OK, 2 rows affected (0.14 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> alter table staff
+    -> add constraint foreign key(location) references location(location);
+Query OK, 5 rows affected (0.88 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> notee

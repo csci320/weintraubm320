@@ -1,0 +1,2 @@
+printer table is in BCNF because it has only the candidate key of printer to color.
+Computer table is in BCNF As well because its determinants are candidate keys.

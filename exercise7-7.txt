@@ -1,0 +1,5 @@
+mysql> alter table student_major      add constraint foreign key(email) references student(email);
+Query OK, 12 rows affected (0.28 sec)
+Records: 12  Duplicates: 0  Warnings: 0
+
+mysql> notee

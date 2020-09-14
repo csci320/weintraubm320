@@ -1,13 +1,19 @@
 mysql> insert into student_major (email, major name, gender) values
 
-mysql> insert into student_major (email, major_name, gender) values
-('ccadillac@dewv.net', 'Management', 'Men') , 
-('ccadillac@dewv.net', 'Pre-Law', 'Men'),
-('ddavis@dewv.net', 'Music', 'Women'), 
-('ddavis@dewv.net', 'Art', 'Women'), 
-('bbooth@dewv.net', 'Marketing', 'Men'),
-('eelkins@dewv.net', 'Biology', 'Men');
-Query OK, 6 rows affected (0.05 sec)
-Records: 6  Duplicates: 0  Warnings: 0
+mysql> insert into student_major(email, major_name) values               
+    ->  ('ccadillac@dewv.net'  , 'English'),                    
+    ->  ('iicehouse@dewv.net'  , 'Chemistry'),                    
+    ->  ('aalbert@dewv.net'    , 'Computer Sci'),             
+    ->  ('ddavis@dewv.net'     , 'English' ),       
+    ->  ('bbooth@dewv.net'     , 'Philosophy'), 
+    ->  ('eelkins@dewv.net'    , 'Biology' ),                     
+    ->  ('hhermanson@dewv.net' , 'Chemistry' ),                    
+    ->  ('fforest@dewv.net'    , 'Undecided' ),                                                               
+    ->  ('ggatehouse@dewv.net' , 'Computer Sci'),                     
+    ->  ('ggatehouse@dewv.net' , 'Math'),
+    ->  ('ddavis@dewv.net'     , 'Philosophy'),
+    ->  ('bbooth@dewv.net'     , 'Computer Sci');
+Query OK, 12 rows affected (0.04 sec)
+Records: 12  Duplicates: 0  Warnings: 0
 
 mysql> notee
