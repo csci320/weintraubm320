@@ -1,0 +1,23 @@
+mysql> select first_name, last_name, major_name 
+    ->      from student join student_major
+    ->      on student.email = student_major.email
+    ->  ; 
++------------+-----------+--------------+
+| first_name | last_name | major_name   |
++------------+-----------+--------------+
+| Alice      | Albert    | Computer Sci |
+| Bob        | Booth     | Computer Sci |
+| Bob        | Booth     | Philosophy   |
+| Charlie    | Cadillac  | English      |
+| Debbie     | Davis     | English      |
+| Debbie     | Davis     | Philosophy   |
+| Eric       | Elkins    | Biology      |
+| Frank      | Forest    | Undecided    |
+| Gary       | Gatehouse | Computer Sci |
+| Gary       | Gatehouse | Math         |
+| Hannah     | Hermanson | Chemistry    |
+| Irving     | Icehouse  | Chemistry    |
++------------+-----------+--------------+
+12 rows in set (0.00 sec)
+
+mysql>     notee

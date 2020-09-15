@@ -1,0 +1,24 @@
+
+mysql> select first_name, last_name, name, season  
+    ->      from student join student_sport 
+    ->      on student.email = student_sport.email
+    ->      join sport
+    ->      on student_sport.sport_name = sport.name;
++------------+-----------+----------+--------+
+| first_name | last_name | name     | season |
++------------+-----------+----------+--------+
+| Bob        | Booth     | Golf     | Fall   |
+| Charlie    | Cadillac  | Baseball | Spring |
+| Charlie    | Cadillac  | Soccer   | Fall   |
+| Charlie    | Cadillac  | Soccer   | Fall   |
+| Debbie     | Davis     | Soccer   | Fall   |
+| Debbie     | Davis     | Soccer   | Fall   |
+| Debbie     | Davis     | Softball | Spring |
+| Eric       | Elkins    | Baseball | Spring |
++------------+-----------+----------+--------+
+8 rows in set (0.00 sec)
+
+mysql> --It sorts differently without gender and doesnt realize that gender is the same for both tables.
+    -> ;
+
+mysql> notee

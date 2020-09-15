@@ -1,0 +1,24 @@
+
+mysql> select first_name, last_name, purpose, purpose_achieved  
+    ->      from student join visit2nf
+    ->      on student.email = visit2nf.email
+    ->      where purpose_achieved = 'Y' 
+    ->      order by last_name, first_name
+    ->  ; 
++------------+-----------+-------------------------+------------------+
+| first_name | last_name | purpose                 | purpose_achieved |
++------------+-----------+-------------------------+------------------+
+| Alice      | Albert    | Study hall              | Y                |
+| Bob        | Booth     | study hall              | Y                |
+| Charlie    | Cadillac  | get form signature      | Y                |
+| Debbie     | Davis     | Tour of learning center | Y                |
+| Debbie     | Davis     | Help with paper         | Y                |
+| Frank      | Forest    | math help               | Y                |
+| Frank      | Forest    | math help               | Y                |
+| Gary       | Gatehouse | study hall              | Y                |
+| Hannah     | Hermanson | study hall              | Y                |
+| Irving     | Icehouse  | Meet SLP instructor     | Y                |
++------------+-----------+-------------------------+------------------+
+10 rows in set (0.00 sec)
+
+mysql>      notee
