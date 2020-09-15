@@ -1,6 +1,6 @@
-visit2nf- isnt 3nf with location 
-student- is 3nf having only infor pertinent to student
-sport- is 3nf haing only candidate keys
-major- is 3nf only having the candidate key
-student_sport- is 3nf only connecting sport and student
-student_major- is 3nf only connecting majors and student
+visit2nf- isnt 3nf with location is a transitive key
+student- is 3nf having only info pertinent to student with no transitive key
+sport- is 3nf having no transitive keys
+major- is 3nf only having the candidate key and no transitive keys
+student_sport- is 3nf only connecting sport and student without any keys that could be transitive
+student_major- is 3nf only connecting majors and student  without any keys that could be transitive
