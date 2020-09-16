@@ -1,7 +1,7 @@
 "<" means determines
 
 
-
+name doesnt determine season because there are different genders that have different seasons with the same name
 name and gender < season in sport
 There are no functional dependencies in major with there being only one field
 
