@@ -3,15 +3,15 @@
 
 
 name and gender < season in sport
-There are no functional dependencies in major
+There are no functional dependencies in major with there being only one field
 
 
 
 
 
 First and last names < academic rank visit and visit1nf ARGUABLE for people having the same first and last name
-First and last names < residential status visit and visit1nf
-First and last names < slp instructor first and last names visit and visit1nf
+First and last names < residential status visit and visit1nf ARGUABLE for people having the same first and last name
+First and last names < slp instructor first and last names visit and visit1nf ARGUABLE for people having the same first and last name
 email or First and last names < check in time visit and visit1nf
 email and check in time < location visit and visit1nf
 email and check in time < Checkout time visit and visit1nf
@@ -19,9 +19,9 @@ email and check in time < purpose visit and visit1nf
 email and check in time < purpose achieved visit and visit1nf
 email and check in time < tutoring visit and visit1nf
 email and check in time < comments visit and visit1nf
-First and last names and check in time < location visit and visit1nf
-First and last names and check in time < Checkout time visit and visit1nf
-First and last names and check in time < purpose visit and visit1nf
-First and last names and check in time < purpose achieved visit and visit1nf
-First and last names and check in time < tutoring visit and visit1nf
-First and last names and check in time < comments visit and visit1nf
+First and last names and check in time < location visit and visit1nf ARGUABLE for people having the same first and last name
+First and last names and check in time < Checkout time visit and visit1nf ARGUABLE for people having the same first and last name
+First and last names and check in time < purpose visit and visit1nf ARGUABLE for people having the same first and last name
+First and last names and check in time < purpose achieved visit and visit1nf ARGUABLE for people having the same first and last name
+First and last names and check in time < tutoring visit and visit1nf ARGUABLE for people having the same first and last name
+First and last names and check in time < comments visit and visit1nf ARGUABLE for people having the same first and last name
