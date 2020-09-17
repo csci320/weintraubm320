@@ -1,8 +1,5 @@
-mysql> 
+
 mysql> select location, cubicle, printer, color
-    -> ^C
-mysql> select location, cubicle, printer, color
-    -> from computer join printer
-    -> on computer.printer join printer.printer;
-ERROR 1049 (42000): Unknown database 'printer'
+     from computer join printer;
+   -- still unsure how to fix this;
 mysql> notee
