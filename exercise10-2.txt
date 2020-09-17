@@ -1,0 +1,25 @@
+mysql> select sport.name, sport.gender, student.first_name, student.last_name
+    -> from sport right outer join student_sport
+    -> on student_sport.sport_name = sport.name
+    -> join student
+    -> on student.email = student_sport.email;
++----------+--------+------------+-----------+
+| name     | gender | first_name | last_name |
++----------+--------+------------+-----------+
+| Golf     | Men    | Bob        | Booth     |
+| Baseball | Men    | Charlie    | Cadillac  |
+| Soccer   | Men    | Charlie    | Cadillac  |
+| Soccer   | Women  | Charlie    | Cadillac  |
+| Soccer   | Men    | Debbie     | Davis     |
+| Soccer   | Women  | Debbie     | Davis     |
+| Softball | Women  | Debbie     | Davis     |
+| Baseball | Men    | Eric       | Elkins    |
++----------+--------+------------+-----------+
+8 rows in set (0.00 sec)
+
+mysql> -- cant make it work with nulls
+mysql> ;
+ERROR: 
+No query specified
+
+mysql> notee
