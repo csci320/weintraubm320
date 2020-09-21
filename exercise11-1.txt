@@ -1,0 +1,7 @@
+mysql> select a.name, a.season, b.name, b. season     
+ from sport a join sport b       
+ on a.name = b.name where a.season < b.season;
+Empty set (0.00 sec)
+
+
+mysql> notee

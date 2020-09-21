@@ -1,0 +1,5 @@
+you cant perform this self join the only thing 
+we have is the assistants email in the staff table
+no names for them 
+did i miss something i described several 
+tables and found nothing?

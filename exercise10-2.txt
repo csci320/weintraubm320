@@ -1,25 +1,34 @@
-mysql> select sport.name, sport.gender, student.first_name, student.last_name
-    -> from sport right outer join student_sport
-    -> on student_sport.sport_name = sport.name
-    -> join student
-    -> on student.email = student_sport.email;
-+----------+--------+------------+-----------+
-| name     | gender | first_name | last_name |
-+----------+--------+------------+-----------+
-| Golf     | Men    | Bob        | Booth     |
-| Baseball | Men    | Charlie    | Cadillac  |
-| Soccer   | Men    | Charlie    | Cadillac  |
-| Soccer   | Women  | Charlie    | Cadillac  |
-| Soccer   | Men    | Debbie     | Davis     |
-| Soccer   | Women  | Debbie     | Davis     |
-| Softball | Women  | Debbie     | Davis     |
-| Baseball | Men    | Eric       | Elkins    |
-+----------+--------+------------+-----------+
-8 rows in set (0.00 sec)
-
-mysql> -- cant make it work with nulls
-mysql> ;
-ERROR: 
-No query specified
+select sport.name, sport.gender, student.first_name, student.last_name
+    ->      from sport left outer join student_sport
+    ->      on student_sport.sport_name = sport.name
+    ->      left outer join student
+    ->      on student.email = student_sport.email;
++-----------------+--------+------------+-----------+
+| name            | gender | first_name | last_name |
++-----------------+--------+------------+-----------+
+| Baseball        | Men    | Eric       | Elkins    |
+| Baseball        | Men    | Charlie    | Cadillac  |
+| Basketball      | Men    | NULL       | NULL      |
+| Basketball      | Women  | NULL       | NULL      |
+| Cross country   | Men    | NULL       | NULL      |
+| Cross country   | Women  | NULL       | NULL      |
+| Golf            | Men    | Bob        | Booth     |
+| Hockey          | Men    | NULL       | NULL      |
+| Lacrosse        | Men    | NULL       | NULL      |
+| Lacrosse        | Women  | NULL       | NULL      |
+| Soccer          | Men    | Debbie     | Davis     |
+| Soccer          | Men    | Charlie    | Cadillac  |
+| Soccer          | Women  | Debbie     | Davis     |
+| Soccer          | Women  | Charlie    | Cadillac  |
+| Softball        | Women  | Debbie     | Davis     |
+| Swimming        | Men    | NULL       | NULL      |
+| Swimming        | Women  | NULL       | NULL      |
+| Tennis          | Men    | NULL       | NULL      |
+| Tennis          | Women  | NULL       | NULL      |
+| Track and field | Men    | NULL       | NULL      |
+| Track and field | Women  | NULL       | NULL      |
+| Volleyball      | Women  | NULL       | NULL      |
++-----------------+--------+------------+-----------+
+22 rows in set (0.00 sec)
 
 mysql> notee
