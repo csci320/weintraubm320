@@ -8,4 +8,8 @@ mysql> select memory, count(*) from computer group by memory having count(*) < 8
 +--------+----------+
 2 rows in set (0.01 sec)
 
+mysql> select location, count(*) from computer group by memory having count(*) < 8;
+ERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learning_center.computer.location' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> 
+
 mysql> notee
