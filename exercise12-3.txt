@@ -1,0 +1,11 @@
+mysql> 
+mysql> select memory, count(*) from computer group by memory having count(*) < 8;
++--------+----------+
+| memory | count(*) |
++--------+----------+
+|      4 |        3 |
+|      8 |        2 |
++--------+----------+
+2 rows in set (0.01 sec)
+
+mysql> notee
