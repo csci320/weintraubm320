@@ -3,3 +3,11 @@ we have is the assistants email in the staff table
 no names for them 
 did i miss something i described several 
 tables and found nothing?
+
+mysql> select a.first_name, a.last_name, a.location, b.first_name, b.last_name, b.location, assistant_email
+    -> from staff a join staff b
+    -> on a.first_name = b.last_name
+    -> left outer join location
+    -> on staff.location = location.location;
+ERROR 1054 (42S22): Unknown column 'staff.location' in 'on clause'
+mysql> 
