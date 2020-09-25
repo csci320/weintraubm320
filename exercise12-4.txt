@@ -1,3 +1,10 @@
-mysql> select slp_instructor_yn, count(*) from staff group by location having count(*) > 1;
-ERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'learning_center.staff.slp_instructor_yn' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
-mysql> notee
+mysql> select location, count(*) from staff group by location having count(*) > 1;
++----------------+----------+
+| location       | count(*) |
++----------------+----------+
+| Albert Hall    |        3 |
+| Writing Center |        2 |
++----------------+----------+
+2 rows in set (0.00 sec)
+
+mysql> 
