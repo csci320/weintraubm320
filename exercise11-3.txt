@@ -11,3 +11,27 @@ mysql> select a.first_name, a.last_name, a.location, b.first_name, b.last_name, 
     -> on staff.location = location.location;
 ERROR 1054 (42S22): Unknown column 'staff.location' in 'on clause'
 mysql> 
+
+mysql> describe staff;
++-------------------+--------------+------+-----+---------+-------+
+| Field             | Type         | Null | Key | Default | Extra |
++-------------------+--------------+------+-----+---------+-------+
+| first_name        | varchar(128) | NO   |     | NULL    |       |
+| last_name         | varchar(128) | NO   |     | NULL    |       |
+| email             | varchar(128) | NO   | PRI | NULL    |       |
+| slp_instructor_yn | char(1)      | YES  |     | N       |       |
+| location          | varchar(15)  | NO   | MUL | NULL    |       |
++-------------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> describe location
+    -> ;
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| location        | varchar(15)  | NO   | PRI | NULL    |       |
+| assistant_email | varchar(128) | NO   |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+--no name for assistants ?
