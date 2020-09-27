@@ -1,13 +1,14 @@
-
-mysql> select location, cubicle, printer, color
-     from computer join printer;
-   -- still unsure how to fix this;
-mysql> notee
-mysql> select location, cubicle, printer, color      from computer join printer      on printer/printer = computer.printer;
-ERROR 1052 (23000): Column 'printer' in field list is ambiguous
-mysql> notee
-mysql> select location, cubicle, printer, color
-    ->     from computer join printer
-    ->      on computer.printer = printer.printer;
-ERROR 1052 (23000): Column 'printer' in field list is ambiguous
+mysql> select location, cubicle, printer.printer, color
+    ->          from computer join printer
+    ->          on computer.printer = printer.printer;
++----------------+---------+---------+-------+
+| location       | cubicle | printer | color |
++----------------+---------+---------+-------+
+| NLC            | A       | P1      | No    |
+| NLC            | B       | P2      | Yes   |
+| NLC            | C       | P2      | Yes   |
+| Writing center | A       | P3      | Yes   |
+| Writing center | B       | P4      | No    |
++----------------+---------+---------+-------+
+5 rows in set (0.00 sec)
 mysql> notee

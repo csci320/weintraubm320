@@ -1,10 +1,10 @@
-mysql> select location, count(*) from staff group by location having count(*) > 1;
-+----------------+----------+
-| location       | count(*) |
-+----------------+----------+
-| Albert Hall    |        3 |
-| Writing Center |        2 |
-+----------------+----------+
-2 rows in set (0.00 sec)
-
+mysql> select location,  count(*) from staff 
+    -> where slp_instructor_yn = 'y'
+    -> group by location having count(*) > 1;
++-------------+----------+
+| location    | count(*) |
++-------------+----------+
+| Albert Hall |        3 |
++-------------+----------+
+1 row in set (0.00 sec)
 mysql> 

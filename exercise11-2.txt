@@ -1,3 +1,22 @@
-select a.first_name a.last_name, a.slp_instructor_first_name, a.slp_instructor_last_name, b.first_name, b.last_name, b.slp_instructor_first_name, b.slp_instructor_last_name
-	from student a join student b
-	on a.first_name = b.first_name and a.last_name = b.last_name where a.slp_instructor_first_name < b.slp_instructor_first_name; 
+mysql> select a.first_name, a.last_name, a.slp_instructor_first_name, a.slp_instructor_last_name, b.first_name, b.last_name, b.slp_instructor_first_name, b.slp_instructor_last_name
+    -> from student a join student b
+    -> on a.first_name = b.first_name; 
++------------+-----------+---------------------------+--------------------------+------------+-----------+---------------------------+--------------------------+
+| first_name | last_name | slp_instructor_first_name | slp_instructor_last_name | first_name | last_name | slp_instructor_first_name | slp_instructor_last_name |
++------------+-----------+---------------------------+--------------------------+------------+-----------+---------------------------+--------------------------+
+| Alice      | Albert    | Sam                       | Studybuddy               | Alice      | Albert    | Sam                       | Studybuddy               |
+| Bob        | Booth     | NULL                      | NULL                     | Bob        | Booth     | NULL                      | NULL                     |
+| Charlie    | Cadillac  | Tery                      | Tutor                    | Charlie    | Cadillac  | Tery                      | Tutor                    |
+| Charlie    | Cadillac  | Tery                      | Tutor                    | Charlie    | Cadillac  | Tery                      | Tutor                    |
+| Charlie    | Cadillac  | Tery                      | Tutor                    | Charlie    | Cadillac  | Tery                      | Tutor                    |
+| Charlie    | Cadillac  | Tery                      | Tutor                    | Charlie    | Cadillac  | Tery                      | Tutor                    |
+| Debbie     | Davis     | NULL                      | NULL                     | Debbie     | Davis     | NULL                      | NULL                     |
+| Eric       | Elkins    | NULL                      | NULL                     | Eric       | Elkins    | NULL                      | NULL                     |
+| Frank      | Forest    | NULL                      | NULL                     | Frank      | Forest    | NULL                      | NULL                     |
+| Gary       | Gatehouse | Terry                     | Tutor                    | Gary       | Gatehouse | Terry                     | Tutor                    |
+| Hannah     | Hermanson | NULL                      | NULL                     | Hannah     | Hermanson | NULL                      | NULL                     |
+| Irving     | Icehouse  | Sam                       | Studybuddy               | Irving     | Icehouse  | Sam                       | Studybuddy               |
++------------+-----------+---------------------------+--------------------------+------------+-----------+---------------------------+--------------------------+
+12 rows in set (0.00 sec)
+
+mysql> 
