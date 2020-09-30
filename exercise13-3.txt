@@ -1,0 +1,8 @@
+mysql> select check_in_time from visit2nf
+    -> where check_in_time = (select check_in_time from visit2nf order by check_in_time limit 1);
++---------------------+
+| check_in_time       |
++---------------------+
+| 2016-08-30 14:35:55 |
++---------------------+
+1 row in set (0.00 sec)
