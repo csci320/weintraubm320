@@ -1,0 +1,2 @@
+mysql> select email from student where not exists (select email from student_major);
+Empty set (0.00 sec)
