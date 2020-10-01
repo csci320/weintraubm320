@@ -1,0 +1,17 @@
+mysql> select email from visit2nf
+    -> union
+    -> select email from student_sport;
++---------------------+
+| email               |
++---------------------+
+| aalbert@dewv.net    |
+| bbooth@dewv.net     |
+| ccadillac@dewv.net  |
+| ddavis@dewv.net     |
+| eelkins@dewv.net    |
+| fforest@dewv.net    |
+| ggatehouse@dewv.net |
+| hhermanson@dewv.net |
+| iicehouse@dewv.net  |
++---------------------+
+9 rows in set (0.00 sec)

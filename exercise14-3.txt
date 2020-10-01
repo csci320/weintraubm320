@@ -1,0 +1,13 @@
+mysql> select email from visit2nf where email not in (select email from student_sport);
++---------------------+
+| email               |
++---------------------+
+| aalbert@dewv.net    |
+| fforest@dewv.net    |
+| fforest@dewv.net    |
+| ggatehouse@dewv.net |
+| ggatehouse@dewv.net |
+| hhermanson@dewv.net |
+| iicehouse@dewv.net  |
++---------------------+
+7 rows in set (0.00 sec)

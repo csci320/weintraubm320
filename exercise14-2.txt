@@ -1,0 +1,13 @@
+mysql> select email from visit2nf where email in (select email from student_sport);
++--------------------+
+| email              |
++--------------------+
+| bbooth@dewv.net    |
+| ccadillac@dewv.net |
+| ccadillac@dewv.net |
+| ddavis@dewv.net    |
+| ddavis@dewv.net    |
+| ddavis@dewv.net    |
+| eelkins@dewv.net   |
++--------------------+
+7 rows in set (0.01 sec)
