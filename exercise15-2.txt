@@ -1,7 +1,7 @@
 mysql> create user 'commuters_user'@'localhost' identified by 'more parking';
 Query OK, 0 rows affected (0.07 sec)
 
-mysql> grant select on commuters to 'commuters_user'@'localhost';
+mysql> grant select on real_commuters to 'commuters_user'@'localhost';
 Query OK, 0 rows affected (0.05 sec)
 
 mysql> mysql -u commuters_user -p
@@ -34,7 +34,7 @@ mysql> show tables;
 +---------------------------+
 | Tables_in_learning_center |
 +---------------------------+
-| commuters                 |
+| real_commuters                 |
 +---------------------------+
 1 row in set (0.01 sec)
 
