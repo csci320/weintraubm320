@@ -1,0 +1,13 @@
+mysql> explain select first_name, last_name, purpose  
+    ->           from student join visit2nf
+    ->           on student.email = visit2nf.email
+    ->           order by last_name, first_name;
++----+-------------+----------+------------+--------+---------------+---------+---------+--------------------------------+------+----------+---------------------------------+
+| id | select_type | table    | partitions | type   | possible_keys | key     | key_len | ref                            | rows | filtered | Extra                           |
++----+-------------+----------+------------+--------+---------------+---------+---------+--------------------------------+------+----------+---------------------------------+
+|  1 | SIMPLE      | visit2nf | NULL       | ALL    | PRIMARY       | NULL    | NULL    | NULL                           |   14 |   100.00 | Using temporary; Using filesort |
+|  1 | SIMPLE      | student  | NULL       | eq_ref | PRIMARY       | PRIMARY | 514     | learning_center.visit2nf.email |    1 |   100.00 | NULL                            |
++----+-------------+----------+------------+--------+---------------+---------+---------+--------------------------------+------+----------+---------------------------------+
+2 rows in set, 1 warning (0.00 sec)
+
+The explain is breifly summarizing how the tables are being connected as well as showing that only part of the query is using a ky that being student.

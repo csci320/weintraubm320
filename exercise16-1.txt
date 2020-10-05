@@ -1,0 +1,4 @@
+mysql> create index slp_name on student (slp_instructor_first_name, slp_instructor_last_name);
+Query OK, 0 rows affected (0.15 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+

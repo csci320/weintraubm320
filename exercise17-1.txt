@@ -1,0 +1,10 @@
+mysql> explain select slp_instructor_first_name from student;
++----+-------------+---------+------------+-------+---------------+----------+---------+------+------+----------+-------------+
+| id | select_type | table   | partitions | type  | possible_keys | key      | key_len | ref  | rows | filtered | Extra       |
++----+-------------+---------+------------+-------+---------------+----------+---------+------+------+----------+-------------+
+|  1 | SIMPLE      | student | NULL       | index | NULL          | slp_name | 1030    | NULL |   10 |   100.00 | Using index |
++----+-------------+---------+------------+-------+---------------+----------+---------+------+------+----------+-------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> Terminal close -- exit!
+Aborted
