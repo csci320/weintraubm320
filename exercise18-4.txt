@@ -1,0 +1,93 @@
+gitpod /workspace/weintraubm320 $ mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 21
+Server version: 8.0.21-0ubuntu0.20.04.4 (Ubuntu)
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use nlc2;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables
+    -> ;
++----------------+
+| Tables_in_nlc2 |
++----------------+
+| computer       |
+| location       |
+| major          |
+| printer        |
+| real_commuters |
+| sport          |
+| staff          |
+| student        |
+| student_major  |
+| student_sport  |
+| visit          |
+| visit1nf       |
+| visit2nf       |
++----------------+
+13 rows in set (0.00 sec)
+
+mysql> start transaction
+    -> ;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> drop table visit;
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> drop table staff;
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> show tables
+    -> ;
++----------------+
+| Tables_in_nlc2 |
++----------------+
+| computer       |
+| location       |
+| major          |
+| printer        |
+| real_commuters |
+| sport          |
+| student        |
+| student_major  |
+| student_sport  |
+| visit1nf       |
+| visit2nf       |
++----------------+
+11 rows in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show tables
+    -> ;
++----------------+
+| Tables_in_nlc2 |
++----------------+
+| computer       |
+| location       |
+| major          |
+| printer        |
+| real_commuters |
+| sport          |
+| student        |
+| student_major  |
+| student_sport  |
+| visit1nf       |
+| visit2nf       |
++----------------+
+11 rows in set (0.00 sec)
+
+mysql> notee
+Outfile disabled.
+mysql> 
