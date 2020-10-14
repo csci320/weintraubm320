@@ -1,0 +1,85 @@
+> db.students.insertMany(
+...      [
+...          {
+...              _id: 4,
+...              first_name: 'Alice', 
+...              last_name: 'Albert', 
+...              email: 'aalbet@dewv.net', 
+...              academic_rank: 'Junior', 
+...              residential_status: 'On campus', 
+...              majors: ['Computer Science'], 
+...              slp_instructor_last_name: 'Sam', 
+...             slp_instructor_last_name: 'Studybuddy'
+...          },
+... {
+...              _id: 5,
+...              first_name: 'Bob', 
+...              last_name: 'Booth', 
+...              email: 'bbooth@dewv.net', 
+...              academic_rank: 'Sophomore', 
+...              residential_status: 'On Campus', 
+...              majors: ['Computer Science', 'Philosophy'], 
+...      sports: ['golf'],
+...              slp_instructor_last_name: 'NULL', 
+...             slp_instructor_last_name: 'NULL'
+...          },
+... {
+...              _id: 6,
+...              first_name: 'Debbie', 
+...              last_name: 'Davis', 
+...              email: 'ddavis@dewv.net', 
+...              academic_rank: 'Freshman', 
+...              residential_status: 'On campus', 
+...              majors: ['Philosophy','English'], 
+...      sports: ['soccer','softball'],
+...              slp_instructor_last_name: 'NULL', 
+...             slp_instructor_last_name: 'NULL'
+...          },
+... {
+...              _id: 7,
+...              first_name: 'Eric', 
+...              last_name: 'Elkins', 
+...              email: 'eelkins@dewv.edu', 
+...              academic_rank: 'Senior', 
+...              residential_status: 'Off campus', 
+...              majors: ['Biology'], 
+...      sports: ['baseball'],
+...              slp_instructor_last_name: 'NULL', 
+...             slp_instructor_last_name: 'NULL'
+...          },
+... {
+...              _id: 8,
+...              first_name: 'Frank', 
+...              last_name: 'Forest', 
+...              email: 'fforest@dewv.net', 
+...              academic_rank: 'Freshman', 
+...              residential_status: 'On campus', 
+...              majors: ['Undecided'], 
+...              slp_instructor_last_name: 'NULL', 
+...             slp_instructor_last_name: 'NULL'
+...          },
+... {
+...              _id: 9,
+...              first_name: 'Hannah', 
+...              last_name: 'Hermanson', 
+...              email: 'hhermanson@dewv.net', 
+...              academic_rank: 'Senior', 
+...              residential_status: 'On campus', 
+...              majors: ['Chemistry'], 
+...              slp_instructor_last_name: 'NULL', 
+...             slp_instructor_last_name: 'NULL'
+...          }
+...      ]
+... )
+{ "acknowledged" : true, "insertedIds" : [ 4, 5, 6, 7, 8, 9 ] }
+> db.students.find({})
+{ "_id" : 1, "first_name" : "Gary", "last_name" : "Gatehouse", "email" : "ggatehouse@dewv.net", "academic_rank" : "Sophomore", "residential_status" : "On campus", "majors" : [ "Math", "Computer Science" ], "slp_instructor_first_name" : "Terry", "slp_instructor_last_name" : "Tutor" }
+{ "_id" : 2, "first_name" : "Charlie", "last_name" : "Cadillac", "email" : "ccadillac@dewv.net", "academic_rank" : "Junior", "residential_status" : "Off campus", "majors" : [ "English" ], "sports" : [ { "name" : "Soccer", "gender" : "Men" }, { "name" : "Baseball", "gender" : "Men" } ], "slp_instructor_first_name" : "Terry", "slp_instructor_last_name" : "Tutor" }
+{ "_id" : 3, "first_name" : "Irving", "last_name" : "Icehouse", "email" : "iicehouse@dewv.net", "academic_rank" : "Sophomore", "residential_status" : "On campus", "majors" : [ "Chemistry" ], "slp_instructor_last_name" : "Studybuddy" }
+{ "_id" : 4, "first_name" : "Alice", "last_name" : "Albert", "email" : "aalbet@dewv.net", "academic_rank" : "Junior", "residential_status" : "On campus", "majors" : [ "Computer Science" ], "slp_instructor_last_name" : "Studybuddy" }
+{ "_id" : 5, "first_name" : "Bob", "last_name" : "Booth", "email" : "bbooth@dewv.net", "academic_rank" : "Sophomore", "residential_status" : "On Campus", "majors" : [ "Computer Science", "Philosophy" ], "sports" : [ "golf" ], "slp_instructor_last_name" : "NULL" }
+{ "_id" : 6, "first_name" : "Debbie", "last_name" : "Davis", "email" : "ddavis@dewv.net", "academic_rank" : "Freshman", "residential_status" : "On campus", "majors" : [ "Philosophy", "English" ], "sports" : [ "soccer", "softball" ], "slp_instructor_last_name" : "NULL" }
+{ "_id" : 7, "first_name" : "Eric", "last_name" : "Elkins", "email" : "eelkins@dewv.edu", "academic_rank" : "Senior", "residential_status" : "Off campus", "majors" : [ "Biology" ], "sports" : [ "baseball" ], "slp_instructor_last_name" : "NULL" }
+{ "_id" : 8, "first_name" : "Frank", "last_name" : "Forest", "email" : "fforest@dewv.net", "academic_rank" : "Freshman", "residential_status" : "On campus", "majors" : [ "Undecided" ], "slp_instructor_last_name" : "NULL" }
+{ "_id" : 9, "first_name" : "Hannah", "last_name" : "Hermanson", "email" : "hhermanson@dewv.net", "academic_rank" : "Senior", "residential_status" : "On campus", "majors" : [ "Chemistry" ], "slp_instructor_last_name" : "NULL" }
+> 
