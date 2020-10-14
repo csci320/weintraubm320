@@ -1,4 +1,4 @@
-'; select first_name, last_name from student; --
-'; select first_name, last_name from staff UNION ALL first_name, last_name from student; -- 
-'; select sport, gender from sport join first_name, last_name from student; -- 
-'; TRUNCATE TABLE student; -- 
+"; select first_name, last_name from student; --
+"; select first_name, last_name from staff UNION ALL select first_name, last_name from student; -- 
+"; select sport_name, gender, first_name, last_name from student_sport join student on student_sport.email = student.email; -- 
+"; TRUNCATE TABLE student; -- 
