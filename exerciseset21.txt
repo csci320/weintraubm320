@@ -1,0 +1,53 @@
+db.students.find({academic_rank:'Senior'},{first_name: 1, last_na
+me: 1})
+{ "_id" : 7, "first_name" : "Eric", "last_name" : "Elkins" }
+{ "_id" : 9, "first_name" : "Hannah", "last_name" : "Hermanson" }
+
+
+db.students.find( 
+...  {$or: [
+... {academic_rank: 'Freshman'}, 
+... {academic_rank: 'Sophomore'}
+... ]
+...     },
+...     {first_name: 1, last_name: 1}
+... )
+{ "_id" : 1, "first_name" : "Gary", "last_name" : "Gatehouse" }
+{ "_id" : 3, "first_name" : "Irving", "last_name" : "Icehouse" }
+{ "_id" : 5, "first_name" : "Bob", "last_name" : "Booth" }
+{ "_id" : 6, "first_name" : "Debbie", "last_name" : "Davis" }
+{ "_id" : 8, "first_name" : "Frank", "last_name" : "Forest" }
+> 
+
+
+db.students.find({academic_rank: {$ne: 'Senior'}},{first_name: 1,
+ last_name: 1})
+{ "_id" : 1, "first_name" : "Gary", "last_name" : "Gatehouse" }
+{ "_id" : 2, "first_name" : "Charlie", "last_name" : "Cadillac" }
+{ "_id" : 3, "first_name" : "Irving", "last_name" : "Icehouse" }
+{ "_id" : 4, "first_name" : "Alice", "last_name" : "Albert" }
+{ "_id" : 5, "first_name" : "Bob", "last_name" : "Booth" }
+{ "_id" : 6, "first_name" : "Debbie", "last_name" : "Davis" }
+{ "_id" : 8, "first_name" : "Frank", "last_name" : "Forest" }
+> 
+
+db.students.find({},{first_name: 1, last_name: 1, sports: 1}).sor
+t({last_name: 1})
+{ "_id" : 4, "first_name" : "Alice", "last_name" : "Albert" }
+{ "_id" : 5, "first_name" : "Bob", "last_name" : "Booth", "sports" : [ "golf" ] }
+{ "_id" : 2, "first_name" : "Charlie", "last_name" : "Cadillac", "sports" : [ { "name" : "Soccer", "gender" : "Men" }, { "name" : "Baseball", "gender" : "Men" } ] }
+{ "_id" : 6, "first_name" : "Debbie", "last_name" : "Davis", "sports" : [ "soccer", "softball" ] }
+{ "_id" : 7, "first_name" : "Eric", "last_name" : "Elkins", "sports" : [ "baseball" ] }
+{ "_id" : 8, "first_name" : "Frank", "last_name" : "Forest" }
+{ "_id" : 1, "first_name" : "Gary", "last_name" : "Gatehouse" }
+{ "_id" : 9, "first_name" : "Hannah", "last_name" : "Hermanson" }
+{ "_id" : 3, "first_name" : "Irving", "last_name" : "Icehouse" }
+> 
+
+
+ db.students.find({sports: { $exists: true }},{first_name: 1, last
+_name: 1, sports: 1}).sort({last_name: 1})
+{ "_id" : 5, "first_name" : "Bob", "last_name" : "Booth", "sports" : [ "golf" ] }
+{ "_id" : 2, "first_name" : "Charlie", "last_name" : "Cadillac", "sports" : [ { "name" : "Soccer", "gender" : "Men" }, { "name" : "Baseball", "gender" : "Men" } ] }
+{ "_id" : 6, "first_name" : "Debbie", "last_name" : "Davis", "sports" : [ "soccer", "softball" ] }
+{ "_id" : 7, "first_name" : "Eric", "last_name" : "Elkins", "sports" : [ "baseball" ] }

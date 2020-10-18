@@ -1,0 +1,51 @@
+Name | Type |Activity | Date | Time |Pomodoros
+
+Activity | Total Pomodoros | Estimated Pomodoros | Internal Interruptions | External Interruptions | Completed
+
+
+Create database pomodoro_db;
+Create table person (
+name varchar(25),
+type varchar(25),
+activity varchar (255),
+date varchar(25),
+time varchar(6),
+pomodoros int,
+PRIMARY KEY (name),
+)
+
+
+Create table pom_stat (
+name varchar(25)
+activity varchar(255),
+total_pom int,
+est _pom int,
+internal_int int,
+external_int int,
+completed_Y/N varchar(1),
+PRIMARY KEY (name),
+FOREIGN KEY (name) REFERENCES person(name),
+FOREIGN KEY (pomodoros) REFERENCES person(pomodoros),
+FOREIGN KEY (activity) REFERENCES person(activity)
+)
+
+insert into person (name, type, activity, date, time, pomodoros) Values
+(‘Logan Erton’, ‘writing’, ‘making chapters for new book’ , ‘2020-10-10’, ‘8:30, ‘3’),
+(‘Henry London ’, ‘researching’, ‘looking for sources for philosophy paper’, ‘2020-10-9’, ‘7:20’, ‘9’),
+(‘Roger Dorn’, ‘building’, ‘repairing drywall’, 2020-10-4’, ‘15:20’, ‘20’),
+(‘Henry London’, ‘writing’, ‘writing philosophy paper’, ‘2020-10-10’, ‘8:00’, ‘10’),
+(‘Henry London’, ‘editing’, ‘editing philosophy paper', ‘2020-10-10’, ‘11:00’, ‘3’),
+(‘Morty Aaron’, ‘studying’, ‘chemistry lab work’, ‘2020-10-15’, ‘5:00’, ‘20’),
+(‘Peter Abo’, ‘building’, ‘building an RC car’, ‘2020-10-13’, ‘8:00’, ‘10’),
+('Peter Abo’, ‘repairing’, ‘repairing the RC car’, ‘2020-10-13’, ‘16:00’, ‘35’)
+
+
+insert into pom_stat (name, activity, total_pom, est_pom, internal_int, external_int, completed_Y/N) Values
+(‘Logan Erton’, ‘making chapters for new book’ , ‘3’, ‘5’, ‘10’, ‘6’, ‘N’),
+(‘Henry London ’, ‘looking for sources for philosophy paper’, ‘9’, ‘10’, ‘5’, ‘2’, ‘Y’),
+(Roger Dorn’, ‘repairing drywall’, ‘20’, ‘25’, ‘0’, ‘4’, ‘Y’),
+(‘Henry London’, ‘writing philosophy paper’, ‘10’, ‘8’, ‘22’, ‘2’ , ‘Y’),
+(‘Henry London’, ‘editing philosophy paper’, ‘3’, ‘1’, ‘7’, ‘3’, ‘Y’),
+(‘Morty Aaron’, ‘chemistry lab work’, ‘20’, ‘15’, ‘30’, ‘13’, ‘N’),
+(‘Peter Abo’, ‘building an RC car’, ‘10’, ‘8’, ‘0’, ‘4’, ‘Y’),
+(Peter Abo’, ‘repairing the RC car’, ‘35’, ‘2’, ‘22’, ‘0’, ‘N’)
