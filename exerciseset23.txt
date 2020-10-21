@@ -1,0 +1,8 @@
+> db.students.aggregate([ { $match: {} }, { $out: 'temp_students' 
+} ]);
+>  db.temp_students.deleteOne( { email: 'ggatehouse@dewv.net'})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.temp_students.deleteMany( { email: {$ne: 'ggatehouse@dewv.net
+'}})
+{ "acknowledged" : true, "deletedCount" : 8 }
+> 
