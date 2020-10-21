@@ -49,3 +49,5 @@ insert into pom_stat (name, activity, total_pom, est_pom, internal_int, external
 (‘Morty Aaron’, ‘chemistry lab work’, ‘20’, ‘15’, ‘30’, ‘13’, ‘N’),
 (‘Peter Abo’, ‘building an RC car’, ‘10’, ‘8’, ‘0’, ‘4’, ‘Y’),
 (Peter Abo’, ‘repairing the RC car’, ‘35’, ‘2’, ‘22’, ‘0’, ‘N’)
+
+.
