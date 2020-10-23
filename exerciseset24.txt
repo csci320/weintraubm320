@@ -1,0 +1,184 @@
+> db.visits.aggregate([
+...  {
+...     $lookup:
+...       {
+...         from: "students",
+...         localField: "students_id",
+...         foreignField: "_id",
+...         as: "students_array"
+...       }
+...  }
+...  ])
+{ "_id" : 1, "students_id" : 1, "check_in_time" : "2016-08-30 14:35:55", "check_out_time" : "2016-08-30 15:53:44", "location" : "Albert Hall", "purpose" : "study hall", "purpose_achieved" : "Y", "comments" : "New year, fresh start!", "students_array" : [ { "_id" : 1, "first_name" : "Gary", "last_name" : "Gatehouse", "email" : "ggatehouse@dewv.net", "academic_rank" : "Sophomore", "residential_status" : "On campus", "majors" : [ "Math", "Computer Science" ], "slp_instructor_first_name" : "Terry", "slp_instructor_last_name" : "Tutor" } ] }
+{ "_id" : 2, "students_id" : 2, "check_in_time" : "2016-08-30 14:55:55", "check_out_time" : "2016-08-30 16:53:44", "location" : "Albert Hall", "purpose" : "baseball meeting", "purpose_achieved" : "?", "students_array" : [ { "_id" : 2, "first_name" : "Charlie", "last_name" : "Cadillac", "email" : "ccadillac@dewv.net", "academic_rank" : "Junior", "residential_status" : "Off Campus", "majors" : [ "English" ], "sports" : [ { "name" : "Soccer", "gender" : "Men" }, { "name" : "Baseball", "gender" : "Men" } ], "slp_instructor_first_name" : "Terry", "slp_instructor_last_name" : "Tutor" } ] }
+{ "_id" : 3, "students_id" : 3, "check_in_time" : "2016-08-30 15:56:56", "check_out_time" : "2016-08-30 16:56:46", "location" : "Albert Hall", "purpose" : "Meet SLP instructor", "purpose_achieved" : "Y", "comments" : "Cubicle B computer is not working.", "students_array" : [ { "_id" : 3, "first_name" : "Irving", "last_name" : "Icehouse", "email" : "iicehouse@dewv.net", "academic_rank" : "Sophomore", "residential_status" : "On campus", "majors" : [ "Chemistry" ], "slp_instructor_last_name" : "Studybuddy" } ] }
+
+
+
+
+> db.visits.insertMany([
+...    {
+...      _id: 4,
+...      students_id: 4,
+...      check_in_time: "2016-08-30 16:15:05",
+...      check_out_time: "2016-08-30 16:50:04",
+...      location: "Albert Hall",
+...      purpose: "Study hall",
+...      purpose_achieved: "Y",
+...    },
+...    {
+...      _id: 5,
+...      students_id: 6,
+...      check_in_time: "2016-08-30 16:36:56",
+...      check_out_time: "2016-08-30 17:57:47",
+...      location: "Albert Hall",
+...      purpose: "Tour of learning center",
+...      purpose_achieved: "Y",
+...    },
+...    {
+...      _id: 6,
+...      students_id: 5,
+...      check_in_time: "2016-08-30 16:44:54",
+...      check_out_time: "2016-08-30 16:53:44",
+...      location: "Albert Hall",
+...      purpose: "study hall",
+...      purpose_achieved: "Y",
+...    },
+...    {
+...      _id: 7,
+...      students_id: 7,
+...      check_in_time: "2016-08-30 16:49:59",
+...      check_out_time: "2016-08-30 16:56:46",
+...      location: "Albert Hall",
+...      purpose: "Team Meeting",
+...      purpose_achieved: "N",
+...    },
+...    {
+...      _id: 8,
+...      students_id: 9,
+...      check_in_time: "2016-08-30 16:55:55",
+...      check_out_time: "2016-08-30 16:59:44",
+...      location: "Albert Hall",
+...      purpose: "study hall",
+...      purpose_achieved: "Y",
+...    },  
+...    {
+...      _id: 9,
+...      students_id: 8,
+...      check_in_time: "2016-08-30 16:59:05",
+...      check_out_time: "2016-08-30 17:03:40",
+...      location: "Albert Hall",
+...      purpose: "math help",
+...      purpose_achieved: "Y",
+...    },
+...    {
+...      _id: 10,
+...      students_id: 8,
+...      check_in_time: "2016-08-31 11:19:15",
+...      check_out_time: "2016-08-31 12:23:22",
+...      location: "Albert Hall",
+...      purpose: "math help",
+...      purpose_achieved: "Y",
+...    },
+...    {
+...      _id: 11,
+...      students_id: 2,
+...      check_in_time: "2016-08-31 11:51:15",
+...      check_out_time: "2016-08-31 11:53:44",
+...      location: "Albert Hall",
+...      purpose: "get form signature",
+...      purpose_achieved: "Y",
+...    },   
+...    {
+...      _id: 12,
+...      students_id: 6,
+...      check_in_time: "2016-08-31 13:36:36",
+...      check_out_time: "2016-08-31 14:47:44",
+...      location: " Writing center",
+...      purpose: "Help with paper",
+...      purpose_achieved: "Y",
+...    },
+...    {
+...      _id: 13,
+...      students_id: 1,
+...      check_in_time: "2016-08-31 14:36:56",
+...      check_out_time: "NULL",
+...      location: "Albert Hall",
+...      purpose: "study hall",
+...      purpose_achieved: "NULL",
+...    },
+...    {
+...      _id: 14,
+...      students_id: 6,
+...      check_in_time: "2016-08-31 16:00:06",
+...      check_out_time: "NULL",
+...      location: "Albert Hall",
+...      purpose: "MATH 101",
+...      purpose_achieved: "NULL",
+...    }
+...  ]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+        ]
+}
+
+
+
+> db.visits.find({})
+{ "_id" : 1, "students_id" : 1, "check_in_time" : "2016-08-30 14:35:55", "check_out_time" : "2016-08-30 15:53:44", "location" : "Albert Hall", "purpose" : "study hall", "purpose_achieved" : "Y", "comments" : "New year, fresh start!" }
+{ "_id" : 2, "students_id" : 2, "check_in_time" : "2016-08-30 14:55:55", "check_out_time" : "2016-08-30 16:53:44", "location" : "Albert Hall", "purpose" : "baseball meeting", "purpose_achieved" : "?" }
+{ "_id" : 3, "students_id" : 3, "check_in_time" : "2016-08-30 15:56:56", "check_out_time" : "2016-08-30 16:56:46", "location" : "Albert Hall", "purpose" : "Meet SLP instructor", "purpose_achieved" : "Y", "comments" : "Cubicle B computer is not working." }
+{ "_id" : 4, "students_id" : 4, "check_in_time" : "2016-08-30 16:15:05", "check_out_time" : "2016-08-30 16:50:04", "location" : "Albert Hall", "purpose" : "Study hall", "purpose_achieved" : "Y" }
+{ "_id" : 5, "students_id" : 6, "check_in_time" : "2016-08-30 16:36:56", "check_out_time" : "2016-08-30 17:57:47", "location" : "Albert Hall", "purpose" : "Tour of learning center", "purpose_achieved" : "Y" }
+{ "_id" : 6, "students_id" : 5, "check_in_time" : "2016-08-30 16:44:54", "check_out_time" : "2016-08-30 16:53:44", "location" : "Albert Hall", "purpose" : "study hall", "purpose_achieved" : "Y" }
+{ "_id" : 7, "students_id" : 7, "check_in_time" : "2016-08-30 16:49:59", "check_out_time" : "2016-08-30 16:56:46", "location" : "Albert Hall", "purpose" : "Team Meeting", "purpose_achieved" : "N" }
+{ "_id" : 8, "students_id" : 9, "check_in_time" : "2016-08-30 16:55:55", "check_out_time" : "2016-08-30 16:59:44", "location" : "Albert Hall", "purpose" : "study hall", "purpose_achieved" : "Y" }
+{ "_id" : 9, "students_id" : 8, "check_in_time" : "2016-08-30 16:59:05", "check_out_time" : "2016-08-30 17:03:40", "location" : "Albert Hall", "purpose" : "math help", "purpose_achieved" : "Y" }
+{ "_id" : 10, "students_id" : 8, "check_in_time" : "2016-08-31 11:19:15", "check_out_time" : "2016-08-31 12:23:22", "location" : "Albert Hall", "purpose" : "math help", "purpose_achieved" : "Y" }
+{ "_id" : 11, "students_id" : 2, "check_in_time" : "2016-08-31 11:51:15", "check_out_time" : "2016-08-31 11:53:44", "location" : "Albert Hall", "purpose" : "get form signature", "purpose_achieved" : "Y" }
+{ "_id" : 12, "students_id" : 6, "check_in_time" : "2016-08-31 13:36:36", "check_out_time" : "2016-08-31 14:47:44", "location" : " Writing center", "purpose" : "Help with paper", "purpose_achieved" : "Y" }
+{ "_id" : 13, "students_id" : 1, "check_in_time" : "2016-08-31 14:36:56", "check_out_time" : "NULL", "location" : "Albert Hall", "purpose" : "study hall", "purpose_achieved" : "NULL" }
+{ "_id" : 14, "students_id" : 6, "check_in_time" : "2016-08-31 16:00:06", "check_out_time" : "NULL", "location" : "Albert Hall", "purpose" : "MATH 101", "purpose_achieved" : "NULL" }
+
+
+
+
+
+> db.visits.aggregate([
+...  {
+...     $lookup:
+...       {
+...         from: "students",
+...         localField: "students_id",
+...         foreignField: "_id",
+...         as: "students_array"
+...       }
+...  }
+...  ])
+{ "_id" : 1, "students_id" : 1, "check_in_time" : "2016-08-30 14:35:55", "check_out_time" : "2016-08-30 15:53:44", "location" : "Albert Hall", "purpose" : "study hall", "purpose_achieved" : "Y", "comments" : "New year, fresh start!", "students_array" : [ { "_id" : 1, "first_name" : "Gary", "last_name" : "Gatehouse", "email" : "ggatehouse@dewv.net", "academic_rank" : "Sophomore", "residential_status" : "On campus", "majors" : [ "Math", "Computer Science" ], "slp_instructor_first_name" : "Terry", "slp_instructor_last_name" : "Tutor" } ] }
+{ "_id" : 2, "students_id" : 2, "check_in_time" : "2016-08-30 14:55:55", "check_out_time" : "2016-08-30 16:53:44", "location" : "Albert Hall", "purpose" : "baseball meeting", "purpose_achieved" : "?", "students_array" : [ { "_id" : 2, "first_name" : "Charlie", "last_name" : "Cadillac", "email" : "ccadillac@dewv.net", "academic_rank" : "Junior", "residential_status" : "Off Campus", "majors" : [ "English" ], "sports" : [ { "name" : "Soccer", "gender" : "Men" }, { "name" : "Baseball", "gender" : "Men" } ], "slp_instructor_first_name" : "Terry", "slp_instructor_last_name" : "Tutor" } ] }
+{ "_id" : 3, "students_id" : 3, "check_in_time" : "2016-08-30 15:56:56", "check_out_time" : "2016-08-30 16:56:46", "location" : "Albert Hall", "purpose" : "Meet SLP instructor", "purpose_achieved" : "Y", "comments" : "Cubicle B computer is not working.", "students_array" : [ { "_id" : 3, "first_name" : "Irving", "last_name" : "Icehouse", "email" : "iicehouse@dewv.net", "academic_rank" : "Sophomore", "residential_status" : "On campus", "majors" : [ "Chemistry" ], "slp_instructor_last_name" : "Studybuddy" } ] }
+{ "_id" : 4, "students_id" : 4, "check_in_time" : "2016-08-30 16:15:05", "check_out_time" : "2016-08-30 16:50:04", "location" : "Albert Hall", "purpose" : "Study hall", "purpose_achieved" : "Y", "students_array" : [ { "_id" : 4, "first_name" : "Alice", "last_name" : "Albert", "email" : "aalbert@dewv.net", "academic_rank" : "Junior", "residential_status" : "On campus", "majors" : [ "Computer Science" ], "slp_instructor_last_name" : "Studybuddy", "slp_instructor_first_name" : "Sam" } ] }
+{ "_id" : 5, "students_id" : 6, "check_in_time" : "2016-08-30 16:36:56", "check_out_time" : "2016-08-30 17:57:47", "location" : "Albert Hall", "purpose" : "Tour of learning center", "purpose_achieved" : "Y", "students_array" : [ { "_id" : 6, "first_name" : "Debbie", "last_name" : "Davis", "email" : "ddavis@dewv.net", "academic_rank" : "Freshman", "residential_status" : "On campus", "majors" : [ "Philosophy", "English" ], "sports" : [ { "name" : "soccer", "gender" : "Women" }, { "name" : "softball", "gender" : "Women" } ], "slp_instructor_last_name" : "NULL" } ] }
+{ "_id" : 6, "students_id" : 5, "check_in_time" : "2016-08-30 16:44:54", "check_out_time" : "2016-08-30 16:53:44", "location" : "Albert Hall", "purpose" : "study hall", "purpose_achieved" : "Y", "students_array" : [ { "_id" : 5, "first_name" : "Bob", "last_name" : "Booth", "email" : "bbooth@dewv.net", "academic_rank" : "Sophomore", "residential_status" : "On Campus", "majors" : [ "Computer Science", "Philosophy" ], "sports" : [ { "name" : "golf", "gender" : "Men" } ], "slp_instructor_last_name" : "NULL" } ] }
+{ "_id" : 7, "students_id" : 7, "check_in_time" : "2016-08-30 16:49:59", "check_out_time" : "2016-08-30 16:56:46", "location" : "Albert Hall", "purpose" : "Team Meeting", "purpose_achieved" : "N", "students_array" : [ { "_id" : 7, "first_name" : "Eric", "last_name" : "Elkins", "email" : "eelkins@dewv.edu", "academic_rank" : "Senior", "residential_status" : "Off Campus", "majors" : [ "Biology" ], "sports" : [ { "name" : "baseball", "gender" : "Men" } ], "slp_instructor_last_name" : "NULL" } ] }
+{ "_id" : 8, "students_id" : 9, "check_in_time" : "2016-08-30 16:55:55", "check_out_time" : "2016-08-30 16:59:44", "location" : "Albert Hall", "purpose" : "study hall", "purpose_achieved" : "Y", "students_array" : [ { "_id" : 9, "first_name" : "Hannah", "last_name" : "Hermanson", "email" : "hhermanson@dewv.net", "academic_rank" : "Senior", "residential_status" : "On campus", "majors" : [ "Chemistry" ], "slp_instructor_last_name" : "NULL" } ] }
+{ "_id" : 9, "students_id" : 8, "check_in_time" : "2016-08-30 16:59:05", "check_out_time" : "2016-08-30 17:03:40", "location" : "Albert Hall", "purpose" : "math help", "purpose_achieved" : "Y", "students_array" : [ { "_id" : 8, "first_name" : "Frank", "last_name" : "Forest", "email" : "fforest@dewv.net", "academic_rank" : "Freshman", "residential_status" : "On campus", "majors" : [ "Undecided" ], "slp_instructor_last_name" : "NULL" } ] }
+{ "_id" : 10, "students_id" : 8, "check_in_time" : "2016-08-31 11:19:15", "check_out_time" : "2016-08-31 12:23:22", "location" : "Albert Hall", "purpose" : "math help", "purpose_achieved" : "Y", "students_array" : [ { "_id" : 8, "first_name" : "Frank", "last_name" : "Forest", "email" : "fforest@dewv.net", "academic_rank" : "Freshman", "residential_status" : "On campus", "majors" : [ "Undecided" ], "slp_instructor_last_name" : "NULL" } ] }
+{ "_id" : 11, "students_id" : 2, "check_in_time" : "2016-08-31 11:51:15", "check_out_time" : "2016-08-31 11:53:44", "location" : "Albert Hall", "purpose" : "get form signature", "purpose_achieved" : "Y", "students_array" : [ { "_id" : 2, "first_name" : "Charlie", "last_name" : "Cadillac", "email" : "ccadillac@dewv.net", "academic_rank" : "Junior", "residential_status" : "Off Campus", "majors" : [ "English" ], "sports" : [ { "name" : "Soccer", "gender" : "Men" }, { "name" : "Baseball", "gender" : "Men" } ], "slp_instructor_first_name" : "Terry", "slp_instructor_last_name" : "Tutor" } ] }
+{ "_id" : 12, "students_id" : 6, "check_in_time" : "2016-08-31 13:36:36", "check_out_time" : "2016-08-31 14:47:44", "location" : " Writing center", "purpose" : "Help with paper", "purpose_achieved" : "Y", "students_array" : [ { "_id" : 6, "first_name" : "Debbie", "last_name" : "Davis", "email" : "ddavis@dewv.net", "academic_rank" : "Freshman", "residential_status" : "On campus", "majors" : [ "Philosophy", "English" ], "sports" : [ { "name" : "soccer", "gender" : "Women" }, { "name" : "softball", "gender" : "Women" } ], "slp_instructor_last_name" : "NULL" } ] }
+{ "_id" : 13, "students_id" : 1, "check_in_time" : "2016-08-31 14:36:56", "check_out_time" : "NULL", "location" : "Albert Hall", "purpose" : "study hall", "purpose_achieved" : "NULL", "students_array" : [ { "_id" : 1, "first_name" : "Gary", "last_name" : "Gatehouse", "email" : "ggatehouse@dewv.net", "academic_rank" : "Sophomore", "residential_status" : "On campus", "majors" : [ "Math", "Computer Science" ], "slp_instructor_first_name" : "Terry", "slp_instructor_last_name" : "Tutor" } ] }
+{ "_id" : 14, "students_id" : 6, "check_in_time" : "2016-08-31 16:00:06", "check_out_time" : "NULL", "location" : "Albert Hall", "purpose" : "MATH 101", "purpose_achieved" : "NULL", "students_array" : [ { "_id" : 6, "first_name" : "Debbie", "last_name" : "Davis", "email" : "ddavis@dewv.net", "academic_rank" : "Freshman", "residential_status" : "On campus", "majors" : [ "Philosophy", "English" ], "sports" : [ { "name" : "soccer", "gender" : "Women" }, { "name" : "softball", "gender" : "Women" } ], "slp_instructor_last_name" : "NULL" } ] }
+> 
