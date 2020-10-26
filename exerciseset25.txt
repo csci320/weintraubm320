@@ -1,0 +1,123 @@
+> db.computers.insertOne(
+...    {
+...      _id: 1,
+...      location: "NLC",
+...      cubicle: "A",
+...      memory: "4",
+...      printer: "P1",
+...    }
+...  )
+{ "acknowledged" : true, "insertedId" : 1 }
+> db.computers.insertMany([
+...    {
+...      _id: 2,
+...      location: "NLC", 
+...      cubicle: "B",
+...      memory: 8,
+...      printer: "P2",
+...   },
+...    {
+...      _id: 3,
+...      location: "NLC",
+...      cubicle: "C",
+...      memory: 8,
+...      printer: "P2",
+...    },
+...    {
+...     _id: 4,
+...     location: "Writing Center",
+...     cubicle: "A",
+...     memory: 4,
+...     printer: "P3",
+...    },
+...    {
+...     _id: 5,
+...     location: "Writing Center",
+...     cubicle: "B",
+...     memory: 4,
+...     printer: "P4",
+...    },
+...  ]);
+{ "acknowledged" : true, "insertedIds" : [ 2, 3, 4, 5 ] }
+> 
+> db.computers.aggregate(
+...      [
+...          { $match: {memory: { $lt: 8}}}
+...      ]
+...  )
+{ "_id" : 4, "location" : "Writing Center", "cubicle" : "A", "memory" : 4, "printer" : "P3" }
+{ "_id" : 5, "location" : "Writing Center", "cubicle" : "B", "memory" : 4, "printer" : "P4" }
+> db.computers.find(
+...      {
+...          memory: { 
+...              $lt: 6
+...          }
+...      },
+...      {
+...          memory: 1
+...      }
+...  )
+{ "_id" : 4, "memory" : 4 }
+{ "_id" : 5, "memory" : 4 }
+
+
+
+
+
+
+
+
+> db.visits.aggregate(
+...      [
+...          { $group: {_id: '$location', visits: {$sum: 1}}},  
+...      ]
+...  )
+{ "_id" : " Writing center", "visits" : 1 }
+{ "_id" : "Albert Hall", "visits" : 13 }
+
+
+
+
+
+
+
+> db.students.aggregate(
+...      [
+...          { $group: {_id: '$academic_rank', students: {$sum: 1}}},
+...      ]
+...  )
+{ "_id" : "Senior", "students" : 2 }
+{ "_id" : "Freshman", "students" : 2 }
+{ "_id" : "Junior", "students" : 2 }
+{ "_id" : "Sophomore", "students" : 3 }
+> 
+
+
+
+
+
+
+
+
+> db.students.aggregate(
+...      [
+...  { $match : { residential_status: "Off campus" }},
+...          { $group: {_id: '$academic_rank', students: {$sum: 1}}},
+...      ]
+...  )
+
+
+
+
+
+
+> db.visits.aggregate(
+...     [
+...         { $match: { {location: "Albert Hall"}}, 
+...         { $group: {_id: '$students_id', visits: {$sum: 1}}},
+...         { $match: {visits: { $gt: 1}}}
+...      ]
+...  )
+... 
+... 
+> 
