@@ -40,13 +40,16 @@
 ...  ]);
 { "acknowledged" : true, "insertedIds" : [ 2, 3, 4, 5 ] }
 > 
+
+
+
 > db.computers.aggregate(
 ...      [
-...          { $match: {memory: { $lt: 8}}}
+...  { $group: {_id: '$memory',computers: {$sum: 1}}} 
 ...      ]
-...  )
-{ "_id" : 4, "location" : "Writing Center", "cubicle" : "A", "memory" : 4, "printer" : "P3" }
-{ "_id" : 5, "location" : "Writing Center", "cubicle" : "B", "memory" : 4, "printer" : "P4" }
+... )
+{ "_id" : 8, "computers" : 2 }
+{ "_id" : 4, "computers" : 3 }
 > db.computers.find(
 ...      {
 ...          memory: { 
