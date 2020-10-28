@@ -45,7 +45,6 @@
 
 db.computers.count({memory: {$lt: 8}})
 3
-{ "_id" : 5, "memory" : 4 }
 
 
 
