@@ -43,24 +43,8 @@
 
 
 
-> db.computers.aggregate(
-...      [
-...  { $group: {_id: '$memory',computers: {$sum: 1}}} 
-...      ]
-... )
-{ "_id" : 8, "computers" : 2 }
-{ "_id" : 4, "computers" : 3 }
-> db.computers.find(
-...      {
-...          memory: { 
-...              $lt: 6
-...          }
-...      },
-...      {
-...          memory: 1
-...      }
-...  )
-{ "_id" : 4, "memory" : 4 }
+db.computers.count({memory: {$lt: 8}})
+3
 { "_id" : 5, "memory" : 4 }
 
 
