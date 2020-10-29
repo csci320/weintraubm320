@@ -1,0 +1,65 @@
+> db.computers.createIndex( { location: 1, cubicle: 1 }, { unique: true } )
+{
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "ok" : 1
+}
+> db.computers.getIndexes()
+[
+        {
+                "v" : 2,
+                "key" : {
+                        "_id" : 1
+                },
+                "name" : "_id_",
+                "ns" : "learning_center.computers"
+        },
+        {
+                "v" : 2,
+                "unique" : true,
+                "key" : {
+                        "location" : 1,
+                        "cubicle" : 1
+                },
+                "name" : "location_1_cubicle_1",
+                "ns" : "learning_center.computers"
+        }
+]
+> db.students.createIndex( { sports: 1 })
+{
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "ok" : 1
+}
+> db.students.getIndexes()
+[
+        {
+                "v" : 2,
+                "key" : {
+                        "_id" : 1
+                },
+                "name" : "_id_",
+                "ns" : "learning_center.students"
+        },
+        {
+                "v" : 2,
+                "key" : {
+                        "sports" : 1
+                },
+                "name" : "sports_1",
+                "ns" : "learning_center.students"
+        }
+]
+> 
+
+When it comes to entity integrity the two dbms seem to be on the 
+same level it seems that mongo has a special feature with the unique 
+_id field that gives each entry a unique key that identifies a row.
+
+
+On the subject of referential integrity there seems to be a clear winner
+there doesnt seem to be a foreign key feature meaning that mysql wins 
+by having referential integrity to begin with with programmable foreign
+keys to primary keys on other tables.
